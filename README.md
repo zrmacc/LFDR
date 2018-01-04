@@ -62,8 +62,8 @@ round(var(S),digits=3);
 ```
 
 ```
-## [1] 0.041
-## [1] 1.201
+## [1] 0.081
+## [1] 1.269
 ```
 
 ## Empirical Null Density
@@ -86,18 +86,18 @@ cat("\n");
 ```
 
 ```
-## Initial Likelihood: -4231.57
-## Final Likelihood: -4231.57
-## Overall Likelihood Improvement: 0.00029
+## Initial Likelihood: -4268.83
+## Final Likelihood: -4268.75
+## Overall Likelihood Improvement: 0.077
 ## Estimated location:
-## 0.01
+## -0.02
 ## Estimated scale:
-## 1.95
+## 2.02
 ```
 
 #### Estimate Empirical Null
 
-Parameters for an empirical null distribution $f_{0} = N(\mu_{0},\sigma_{0}^{2})$, and the null proportion $\pi_{0}$, are estimated either by central matching `CM` or maximum likelihood `ML`. In either case, the limits of a *null neighborhood* $\mathcal{N}_{0} = [a,b]$, in which the alternative density $f_{1}$ is taken as having no support, are specified. The null parameters $(\mu_{0},\sigma_{0}^{2})$ are estimated using the $z$ scores falling in $\mathcal{N}_{0}$. In central matching, $\mathcal{N}_{0}$ is partitioned as $a = \xi_{0} < \cdots < \xi_{K} = b$. The log mixture density at the evaluation points $\ln\hat{f}(\xi_{k})$ is regressed on a quadratic function of the evaluation points $\beta_{0} + \beta_{1}\xi_{k} + \beta_{2}\xi_{k}^{2}$. The parameters of interest $(\mu_{0},\sigma_{0}^{2},\pi_{0})$ are functions of $(\beta_{0},\beta_{1},\beta_{2})$. In maximum likelihood, $(\mu_{0},\sigma_{0}^{2})$ are estimated by fitting a truncated normal distribution to $\mathcal{N}_{0}$. The null proportion is obtained from $(\mu_{0},\sigma_{0}^{2})$ and the proportion of $z$ scores falling in $\mathcal{N}_{0}$. 
+Parameters for an empirical null distribution $f_{0} = N(\mu_{0},\sigma_{0}^{2})$, and the null proportion $\pi_{0}$, are estimated either by central matching `CM` or maximum likelihood `ML`. In either case, the limits of a null neighborhood $\mathcal{N}_{0} = [a,b]$, in which the alternative density $f_{1}$ is taken as having no support, are specified. The null parameters $(\mu_{0},\sigma_{0}^{2})$ are estimated using the $z$ scores falling in $\mathcal{N}_{0}$. In central matching, $\mathcal{N}_{0}$ is partitioned as $a = \xi_{0} < \cdots < \xi_{K} = b$. The log mixture density at the evaluation points $\ln\hat{f}(\xi_{k})$ is regressed on a quadratic function of the evaluation points $\beta_{0} + \beta_{1}\xi_{k} + \beta_{2}\xi_{k}^{2}$. The parameters of interest $(\mu_{0},\sigma_{0}^{2},\pi_{0})$ are functions of $(\beta_{0},\beta_{1},\beta_{2})$. In maximum likelihood, $(\mu_{0},\sigma_{0}^{2})$ are estimated by fitting a truncated normal distribution to $\mathcal{N}_{0}$. The null proportion is obtained from $(\mu_{0},\sigma_{0}^{2})$ and the proportion of $z$ scores falling in $\mathcal{N}_{0}$. 
 
 
 ```r
@@ -112,9 +112,9 @@ print(A);
 ```
 
 ```
-##      Mean  Var  pi0
-## [1,]    0 1.08 0.99
-## [2,]    0 1.08 0.99
+##       Mean  Var  pi0
+## [1,] -0.01 1.01 0.97
+## [2,]  0.01 1.20 1.03
 ```
 
 #### Plotting
@@ -164,19 +164,19 @@ round(L$tFDR(3),digits=2);
 
 ```
 ## Local False Discovery Rate Mappings:
-##            z           zd     mp      lfdr
-## 1 -0.6513790 [-0.75,-0.6) -0.675 0.9938389
-## 2  0.5789384   [0.45,0.6)  0.525 1.0000000
-## 3  0.6466528   [0.6,0.75)  0.675 1.0000000
-## 4 -0.5835369 [-0.6,-0.45) -0.525 0.9931745
-## 5  0.3551886   [0.3,0.45)  0.375 1.0000000
-## 6 -0.5503190 [-0.6,-0.45) -0.525 0.9931745
+##            z             zd      mp      lfdr
+## 1  0.1496996   [0.08,0.225)  0.1525 0.9725726
+## 2  0.8646307   [0.805,0.95)  0.8775 1.0000000
+## 3 -0.2617044 [-0.355,-0.21) -0.2825 0.9528290
+## 4  0.1313517   [0.08,0.225)  0.1525 0.9725726
+## 5 -0.1031238 [-0.21,-0.065) -0.1375 0.9548765
+## 6  1.3775998    [1.24,1.38)  1.3125 1.0000000
 ## 
 ## Local False Discovery Rate at z0=3:
-## [1] 0.49
+## [1] 0.59
 ## 
 ## Tail False Discovery Rate at z0=3:
-## [1] 0.29
+## [1] 0.33
 ```
 
 #### Plotting
