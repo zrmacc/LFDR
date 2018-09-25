@@ -8,5 +8,5 @@ output:
 --- 
 
 # Package Vignette
-```{r,child='vignettes/LFDR.Rmd'}
+```{r, child='vignettes/LFDR.Rmd', cache=F}
 ```

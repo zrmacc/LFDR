@@ -6,21 +6,85 @@
 
 using namespace Rcpp;
 
-// Delta
-SEXP Delta(const Eigen::Map<Eigen::MatrixXd> Info, const Eigen::Map<Eigen::VectorXd> S);
-RcppExport SEXP _LFDR_Delta(SEXP InfoSEXP, SEXP SSEXP) {
+// MMP
+SEXP MMP(const Eigen::Map<Eigen::MatrixXd> A, const Eigen::Map<Eigen::MatrixXd> B);
+RcppExport SEXP _LFDR_MMP(SEXP ASEXP, SEXP BSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::RNGScope rcpp_rngScope_gen;
-    Rcpp::traits::input_parameter< const Eigen::Map<Eigen::MatrixXd> >::type Info(InfoSEXP);
-    Rcpp::traits::input_parameter< const Eigen::Map<Eigen::VectorXd> >::type S(SSEXP);
-    rcpp_result_gen = Rcpp::wrap(Delta(Info, S));
+    Rcpp::traits::input_parameter< const Eigen::Map<Eigen::MatrixXd> >::type A(ASEXP);
+    Rcpp::traits::input_parameter< const Eigen::Map<Eigen::MatrixXd> >::type B(BSEXP);
+    rcpp_result_gen = Rcpp::wrap(MMP(A, B));
+    return rcpp_result_gen;
+END_RCPP
+}
+// matIP
+SEXP matIP(const Eigen::Map<Eigen::MatrixXd> A, const Eigen::Map<Eigen::MatrixXd> B);
+RcppExport SEXP _LFDR_matIP(SEXP ASEXP, SEXP BSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< const Eigen::Map<Eigen::MatrixXd> >::type A(ASEXP);
+    Rcpp::traits::input_parameter< const Eigen::Map<Eigen::MatrixXd> >::type B(BSEXP);
+    rcpp_result_gen = Rcpp::wrap(matIP(A, B));
+    return rcpp_result_gen;
+END_RCPP
+}
+// matInv
+SEXP matInv(const Eigen::Map<Eigen::MatrixXd> A);
+RcppExport SEXP _LFDR_matInv(SEXP ASEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< const Eigen::Map<Eigen::MatrixXd> >::type A(ASEXP);
+    rcpp_result_gen = Rcpp::wrap(matInv(A));
+    return rcpp_result_gen;
+END_RCPP
+}
+// det
+SEXP det(const Eigen::Map<Eigen::MatrixXd> A);
+RcppExport SEXP _LFDR_det(SEXP ASEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< const Eigen::Map<Eigen::MatrixXd> >::type A(ASEXP);
+    rcpp_result_gen = Rcpp::wrap(det(A));
+    return rcpp_result_gen;
+END_RCPP
+}
+// matQF
+SEXP matQF(const Eigen::Map<Eigen::MatrixXd> X, const Eigen::Map<Eigen::MatrixXd> A);
+RcppExport SEXP _LFDR_matQF(SEXP XSEXP, SEXP ASEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< const Eigen::Map<Eigen::MatrixXd> >::type X(XSEXP);
+    Rcpp::traits::input_parameter< const Eigen::Map<Eigen::MatrixXd> >::type A(ASEXP);
+    rcpp_result_gen = Rcpp::wrap(matQF(X, A));
+    return rcpp_result_gen;
+END_RCPP
+}
+// SchurC
+SEXP SchurC(const Eigen::Map<Eigen::MatrixXd> Ibb, const Eigen::Map<Eigen::MatrixXd> Iaa, const Eigen::Map<Eigen::MatrixXd> Iba);
+RcppExport SEXP _LFDR_SchurC(SEXP IbbSEXP, SEXP IaaSEXP, SEXP IbaSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< const Eigen::Map<Eigen::MatrixXd> >::type Ibb(IbbSEXP);
+    Rcpp::traits::input_parameter< const Eigen::Map<Eigen::MatrixXd> >::type Iaa(IaaSEXP);
+    Rcpp::traits::input_parameter< const Eigen::Map<Eigen::MatrixXd> >::type Iba(IbaSEXP);
+    rcpp_result_gen = Rcpp::wrap(SchurC(Ibb, Iaa, Iba));
     return rcpp_result_gen;
 END_RCPP
 }
 
 static const R_CallMethodDef CallEntries[] = {
-    {"_LFDR_Delta", (DL_FUNC) &_LFDR_Delta, 2},
+    {"_LFDR_MMP", (DL_FUNC) &_LFDR_MMP, 2},
+    {"_LFDR_matIP", (DL_FUNC) &_LFDR_matIP, 2},
+    {"_LFDR_matInv", (DL_FUNC) &_LFDR_matInv, 1},
+    {"_LFDR_det", (DL_FUNC) &_LFDR_det, 1},
+    {"_LFDR_matQF", (DL_FUNC) &_LFDR_matQF, 2},
+    {"_LFDR_SchurC", (DL_FUNC) &_LFDR_SchurC, 3},
     {NULL, NULL, 0}
 };
 
