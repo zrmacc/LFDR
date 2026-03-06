@@ -4,12 +4,12 @@
 \alias{Support}
 \title{Support}
 \usage{
-Support(z, k = 1)
+Support(z, sig_digits = 1)
 }
 \arguments{
 \item{z}{Observations.}
 
-\item{k}{Significant digits.}
+\item{sig_digits}{Significant digits.}
 }
 \value{
 Numeric vector containing a lower and upper bound.

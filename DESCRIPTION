@@ -1,25 +1,19 @@
 Package: LFDR
 Title: Local False Discovery Rate Estimation
 Version: 0.0.2
-Authors@R: person("Zachary", "McCaw", email = "zmccaw@g.harvard.edu", role = c("aut", "cre"))
+Author: Zachary McCaw <zmccaw@g.harvard.edu>
+Maintainer: Zachary McCaw <zmccaw@g.harvard.edu>
 Description: Utilities for estimating the local false discovery rate. 
 Depends: R (>= 3.4.0)
 License: GPL-3
 Encoding: UTF-8
-LazyData: true
 Suggests: 
-    doMC,
     ggplot2,
     knitr,
     reshape2,
-    rmarkdown
+    rmarkdown,
+    testthat
 VignetteBuilder: knitr
-RoxygenNote: 6.1.0
-LinkingTo: 
-    Rcpp,
-    RcppEigen
+RoxygenNote: 7.3.3
 Imports:
-    foreach,
-    Rcpp,
-    RcppEigen,
-    stats
+    splines

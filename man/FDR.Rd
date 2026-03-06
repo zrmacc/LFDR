@@ -2,22 +2,22 @@
 % Please edit documentation in R/LocalFDR.R
 \name{FDR}
 \alias{FDR}
-\title{Local False Disocery Rate}
+\title{Local False Discovery Rate}
 \usage{
-FDR(z, f = NULL, b = NULL, m0 = 0, v0 = 1, p0 = 1)
+FDR(z, f = NULL, n_bins = NULL, null_mean = 0, null_var = 1, null_prop = 1)
 }
 \arguments{
 \item{z}{Observations.}
 
-\item{f}{Mixture density.}
+\item{f}{Mixture density function (required).}
 
-\item{b}{Bins.}
+\item{n_bins}{Bins.}
 
-\item{m0}{Mean of empirical null.}
+\item{null_mean}{Mean of empirical null.}
 
-\item{v0}{Variance of empirical null.}
+\item{null_var}{Variance of empirical null.}
 
-\item{p0}{Null proportion.}
+\item{null_prop}{Null proportion.}
 }
 \value{
 List including two functions, lfdr for calculating the local false

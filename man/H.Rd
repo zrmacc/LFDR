@@ -4,20 +4,20 @@
 \alias{H}
 \title{Truncated Normal Renormalizing Constant}
 \usage{
-H(m, s, L, U, k = 0, dirn)
+H(loc_param, scale_param, lower_bound, upper_bound, order = 0, direction)
 }
 \arguments{
-\item{m}{Location parameter.}
+\item{loc_param}{Location parameter.}
 
-\item{s}{Scale parameter.}
+\item{scale_param}{Scale parameter.}
 
-\item{L}{Lower truncation limit.}
+\item{lower_bound}{Lower truncation limit.}
 
-\item{U}{Upper truncation limit.}
+\item{upper_bound}{Upper truncation limit.}
 
-\item{k}{Order.}
+\item{order}{Order.}
 
-\item{dirn}{Direction.}
+\item{direction}{Direction.}
 }
 \description{
 Calculates the renormalizing constant of the truncated

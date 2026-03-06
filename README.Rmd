@@ -1,12 +1,19 @@
 ---
 title: "README"
 author: "Zachary McCaw"
-date: "`r Sys.Date()`"
+date: "2026-03-06"
 output: 
   html_document: 
     keep_md: TRUE
---- 
+---
+
+[![R-CMD-check](https://github.com/zmccaw/LFDR/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/zmccaw/LFDR/actions/workflows/R-CMD-check.yaml)
+
+# LFDR: Local False Discovery Rate Estimation
+
+Utilities for estimating the local false discovery rate. See the vignette below for a walkthrough.
 
 # Package Vignette
-```{r, child='vignettes/LFDR.Rmd', cache=F}
+
+```{r, child='vignettes/LFDR.Rmd', cache=FALSE}
 ```
