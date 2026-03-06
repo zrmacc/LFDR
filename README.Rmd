@@ -1,17 +1,14 @@
 ---
-title: "README"
-author: "Zachary McCaw"
-date: "2026-03-06"
 output: 
-  html_document: 
-    keep_md: TRUE
+  github_document
 ---
-
-[![R-CMD-check](https://github.com/zmccaw/LFDR/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/zmccaw/LFDR/actions/workflows/R-CMD-check.yaml)
 
 # LFDR: Local False Discovery Rate Estimation
 
-Utilities for estimating the local false discovery rate. See the vignette below for a walkthrough.
+[![R-CMD-check](https://github.com/zrmacc/LFDR/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/zrmacc/LFDR/actions/workflows/R-CMD-check.yaml)
+
+Zachary R. McCaw <br>
+Updated: 2026-03-06
 
 # Package Vignette
 
